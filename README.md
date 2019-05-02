@@ -1,5 +1,5 @@
 Proyecto realizado por: 
-Alejandro Perez Ganzedo, 
+Alejandro Perez Gancedo, 
 Raul Capellan Fernandez, 
 Santiago Pelaez Pelaez.
 
