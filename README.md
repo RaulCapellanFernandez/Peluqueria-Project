@@ -1,7 +1,7 @@
 Proyecto realizado por: 
-Alejandro Perez Ganzedo
-Raul Capellan Fernandez
-Santiago Pelaez Pelaez
+Alejandro Perez Ganzedo, 
+Raul Capellan Fernandez, 
+Santiago Pelaez Pelaez.
 
 Hemos realizado una aplicación Java para el uso en una peluquería con los casos de uso especificados por la dueña de la misma.
 
