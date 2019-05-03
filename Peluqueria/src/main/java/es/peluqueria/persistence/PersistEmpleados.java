@@ -51,6 +51,30 @@ public class PersistEmpleados {
 	}
 	
 	public void update(Empleados empleado) {
-	
+		try{
+			emf = Persistence.createEntityManagerFactory("p-peluqueria");
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			
+			Empleados actualizar = em.find(Empleados.class, empleado.getDni());
+			
+			actualizar.setNombre(empleado.getNombre());
+			actualizar.setApellidos(empleado.getApellidos());
+			actualizar.setFechaContra(empleado.getFechaContra());
+			actualizar.setEmail(empleado.getEmail());
+			actualizar.setCalle(empleado.getEmail());
+			actualizar.setPiso(empleado.getPiso());
+			actualizar.setCiudad(empleado.getCiudad());
+			actualizar.setProvincia(empleado.getProvincia());
+			actualizar.setCodPostal(empleado.getCodPostal());
+			
+			tx.commit();		
+		}catch(Exception e){
+			tx.rollback();
+		}finally{
+			em.close();
+			emf.close();
+		}
 	}
 }
