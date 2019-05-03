@@ -24,6 +24,8 @@ public class Application {
 		empleado.setCodPostal("24009");
 		
 		persistE.save(empleado);
+
+		persistE.remove(empleado);
 		
 	}
 }

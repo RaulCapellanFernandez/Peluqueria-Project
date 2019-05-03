@@ -1,7 +1,5 @@
 package es.peluqueria.persistence;
 
-import java.util.Date;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -32,5 +30,27 @@ public class PersistEmpleados {
 			emf.close();
 		}
 	}
-
+	
+	public void remove(Empleados empleado) {
+		try{
+			emf = Persistence.createEntityManagerFactory("p-peluqueria");
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			
+			Empleados borrar = em.find(Empleados.class, empleado.getDni());
+			em.remove(borrar);
+			
+			tx.commit();		
+		}catch(Exception e){
+			tx.rollback();
+		}finally{
+			em.close();
+			emf.close();
+		}
+	}
+	
+	public void update(Empleados empleado) {
+	
+	}
 }
