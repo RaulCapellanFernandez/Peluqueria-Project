@@ -6,6 +6,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
 		<class>es.peluqueria.entidades.Empleados</class>
+		<class>es.peluqueria.entidades.Almacen</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.user" value="root"/>
