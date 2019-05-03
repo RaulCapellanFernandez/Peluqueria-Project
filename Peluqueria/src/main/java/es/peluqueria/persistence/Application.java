@@ -15,30 +15,21 @@ public class Application {
 
 	public static void main(String[] args) {
 																		   		
-		EntityManagerFactory emf = null;
-		EntityManager em = null;
-		EntityTransaction tx = null;
+		PersistEmpleados persist = new PersistEmpleados();
 		
-		try{
-			emf = Persistence.createEntityManagerFactory("infinite-finances");
-			em = emf.createEntityManager();
-			tx = em.getTransaction();
-			tx.begin();
-			
-			Empleados empleado = new Empleados();
-			empleado.setDni("123156789");
-			empleado.setNombre("Raul");
-			empleado.setApellidos("Capellan");
-			
-			em.persist(empleado);
-			
-			tx.commit();		
-		}catch(Exception e){
-			tx.rollback();
-		}finally{
-			em.close();
-			emf.close();
-		}
+		Empleados empleado = new Empleados();
+		empleado.setDni("123156381");
+		empleado.setNombre("Raul");
+		empleado.setApellidos("Capellan");
+		empleado.setFechaContra(new Date());
+		empleado.setEmail("raulcape.7@gmail.com");
+		empleado.setCalle("Astorga 16");
+		empleado.setPiso("4ºA");
+		empleado.setCiudad("Leon");
+		empleado.setProvincia("Leon");
+		empleado.setCodPostal("24009");
+		
+		persist.save(empleado);
 		
 	}
 }

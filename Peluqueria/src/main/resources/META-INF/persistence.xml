@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
 	http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
 
-	<persistence-unit name="infinite-finances">
+	<persistence-unit name="p-peluqueria">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
 		<class>es.peluqueria.entidades.Empleados</class>

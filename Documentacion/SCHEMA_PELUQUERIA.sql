@@ -24,7 +24,7 @@ CREATE TABLE `empleados` (
   `CALLE` varchar(100) NOT NULL,
   `PISO` varchar(100) DEFAULT NULL,
   `CIUDAD` varchar(100) NOT NULL,
-  `PROVINCIA` varchar(2) NOT NULL,
+  `PROVINCIA` varchar(100) NOT NULL,
   `CODIGO_POSTAL` varchar(5) NOT NULL,
   PRIMARY KEY (`DNI`)
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
