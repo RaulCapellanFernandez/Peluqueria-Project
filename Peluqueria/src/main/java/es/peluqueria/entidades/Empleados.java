@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "EMPLEADOS")
 public class Empleados {
+	
 	@Id
 	@Column(name = "DNI")
 	private String dni;

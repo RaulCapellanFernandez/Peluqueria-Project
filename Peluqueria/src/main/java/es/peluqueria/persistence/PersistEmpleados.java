@@ -10,11 +10,12 @@ import javax.persistence.Persistence;
 import es.peluqueria.entidades.Empleados;
 
 public class PersistEmpleados {
+	
+	EntityManagerFactory emf = null;
+	EntityManager em = null;
+	EntityTransaction tx = null;
+	
 	public void save(Empleados empleado) {
-		EntityManagerFactory emf = null;
-		EntityManager em = null;
-		EntityTransaction tx = null;
-		
 		try{
 			emf = Persistence.createEntityManagerFactory("p-peluqueria");
 			em = emf.createEntityManager();

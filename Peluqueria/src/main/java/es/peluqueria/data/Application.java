@@ -1,21 +1,15 @@
-package es.peluqueria.persistence;
+package es.peluqueria.data;
 
-import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.Date;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-
 import es.peluqueria.entidades.*;
+import es.peluqueria.persistence.PersistEmpleados;
 
 public class Application {
 
 	public static void main(String[] args) {
 																		   		
-		PersistEmpleados persist = new PersistEmpleados();
+		PersistEmpleados persistE = new PersistEmpleados();
 		
 		Empleados empleado = new Empleados();
 		empleado.setDni("123156381");
@@ -29,7 +23,7 @@ public class Application {
 		empleado.setProvincia("Leon");
 		empleado.setCodPostal("24009");
 		
-		persist.save(empleado);
+		persistE.save(empleado);
 		
 	}
 }
