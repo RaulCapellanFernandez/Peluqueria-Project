@@ -1,5 +1,7 @@
 package es.peluqueria.persistence;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -76,5 +78,13 @@ public class PersistEmpleados {
 			em.close();
 			emf.close();
 		}
+	}
+	
+	public List<Empleados> recuperar() {
+		
+		emf = Persistence.createEntityManagerFactory("p-peluqueria");
+		em = emf.createEntityManager();
+		List<Empleados> listaEmpleados = (List<Empleados>) em.createQuery("FROM Empleados").getResultList();
+		return listaEmpleados;
 	}
 }

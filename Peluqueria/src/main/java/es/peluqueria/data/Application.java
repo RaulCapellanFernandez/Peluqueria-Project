@@ -1,6 +1,7 @@
 package es.peluqueria.data;
 
 import java.util.Date;
+import java.util.List;
 
 import es.peluqueria.entidades.*;
 import es.peluqueria.persistence.PersistEmpleados;
@@ -23,11 +24,17 @@ public class Application {
 		empleado.setProvincia("Leon");
 		empleado.setCodPostal("24009");
 		
-		persistE.save(empleado);
+		//persistE.save(empleado);
 		
-		empleado.setNombre("AlexElCapo");
+		//empleado.setNombre("AlexElCapo");
 		
-		persistE.update(empleado);
+		List<Empleados>listaE = persistE.recuperar();
+		
+		for(int i=0; i < listaE.size(); i++) {
+			System.out.println("PERSONAS ->"+listaE.get(i).getNombre());
+		}
+		
+		//persistE.update(empleado);
 		//persistE.remove(empleado);
 		
 	}
