@@ -13,13 +13,14 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-		/*
+		
 		PersistAlmacen persistA = new PersistAlmacen();
 		
 		Almacen almacen = new Almacen();
 		almacen.setNombre("H&S Limon");
 		almacen.setCantidad(3);
-		*/
+		
+		persistA.save(almacen);
 		
 		
 		PersistEmpleados persistE = new PersistEmpleados();
@@ -45,9 +46,13 @@ public class Application {
 		producto.setNombre("Corte de pelo");
 		producto.setPrecio(12);
 		
-		//persistP.save(producto);
+		List<Almacen>listaAlmacen = persistA.recuperar();
 		
-		List<Empleados>listaEmpleados = persistE.recuperar();
+		producto.setAlmacen(listaAlmacen.get(0));
+		
+		persistP.save(producto);
+		
+		/*List<Empleados>listaEmpleados = persistE.recuperar();
 		List<Productos>listaProductos = persistP.recuperar();
 		
 		PersistVentas persistV  = new PersistVentas();
@@ -58,7 +63,7 @@ public class Application {
 		venta.setEmpleado(listaEmpleados.get(0));
 		venta.setProducto(listaProductos.get(0));
 		
-		persistV.save(venta);
+		persistV.save(venta);*/
 		
 	}
 }

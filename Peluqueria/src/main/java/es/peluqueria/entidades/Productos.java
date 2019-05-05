@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,12 +19,25 @@ public class Productos {
 	private Integer idProd;
 	
 	@Column(name = "NOMBRE_PRODUCTO")
-	private String nameProd;
+	private String nombre;
 	
 	@Column(name = "CANTIDAD")
 	private Integer precio;
+	
+	@ManyToOne
+	@JoinColumn(name = "ID_ALMACEN")
+	private Almacen almacen;
 
 	
+
+	public Almacen getAlmacen() {
+		return almacen;
+	}
+
+	public void setAlmacen(Almacen almacen) {
+		this.almacen = almacen;
+	}
+
 	public Integer getIdProd() {
 		return idProd;
 	}
@@ -32,11 +47,11 @@ public class Productos {
 	}
 
 	public String getNombre() {
-		return nameProd;
+		return nombre;
 	}
 
-	public void setNombre(String nombreProd) {
-		this.nameProd = nombreProd;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public Integer getPrecio() {
