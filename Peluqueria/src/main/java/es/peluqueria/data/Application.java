@@ -50,7 +50,14 @@ public class Application {
 		
 		producto.setAlmacen(listaAlmacen.get(0));
 		
-		persistP.save(producto);
+		List<Productos>listaProductos = persistP.recuperar();
+		listaProductos.get(0).setNombre("La vida es muy dura");
+		
+		persistP.update(listaProductos.get(0));
+		
+		//persistP.save(producto);
+		//List<Productos>listaProductos = persistP.recuperar();
+		//persistP.remove(listaProductos.get(0));
 		
 		/*List<Empleados>listaEmpleados = persistE.recuperar();
 		List<Productos>listaProductos = persistP.recuperar();
