@@ -33,10 +33,19 @@ public class Ventas {
 	@JoinColumn(name = "DNI")
 	private Empleados empleado;
 	
+	@ManyToOne
+	@JoinColumn(name = "ID_PRODUCTO")
+	private Productos producto;
 	
-	@Column(name = "ID_PRODUCTO")
-	private Integer idProd;
+	
+	
+	public Productos getProducto() {
+		return producto;
+	}
 
+	public void setProducto(Productos producto) {
+		this.producto = producto;
+	}
 	
 	public Integer getIdVenta() {
 		return idVenta;
@@ -69,12 +78,4 @@ public class Ventas {
 	public void setEmpleado(Empleados empleado) {
 		this.empleado = empleado;
 	}
-
-	public Integer getIdProd() {
-		return idProd;
-	}
-
-	public void setIdProd(Integer idProd) {
-		this.idProd = idProd;
-	}	
 }

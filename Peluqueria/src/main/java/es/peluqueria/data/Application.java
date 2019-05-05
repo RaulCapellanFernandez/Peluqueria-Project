@@ -6,6 +6,7 @@ import java.util.List;
 import es.peluqueria.entidades.*;
 import es.peluqueria.persistence.PersistAlmacen;
 import es.peluqueria.persistence.PersistEmpleados;
+import es.peluqueria.persistence.PersistProducto;
 import es.peluqueria.persistence.PersistVentas;
 
 public class Application {
@@ -24,7 +25,7 @@ public class Application {
 		PersistEmpleados persistE = new PersistEmpleados();
 	
 		Empleados empleado = new Empleados();
-		empleado.setDni("124156321");
+		empleado.setDni("722255221");
 		empleado.setNombre("Raul");
 		empleado.setApellidos("Capellan");
 		empleado.setFechaContra(new Date());
@@ -37,15 +38,25 @@ public class Application {
 		
 		
 		//persistE.save(empleado);
+		
+		PersistProducto persistP = new PersistProducto();
+		
+		Productos producto = new Productos();
+		producto.setNombre("Corte de pelo");
+		producto.setPrecio(12);
+		
+		//persistP.save(producto);
+		
 		List<Empleados>listaEmpleados = persistE.recuperar();
+		List<Productos>listaProductos = persistP.recuperar();
 		
 		PersistVentas persistV  = new PersistVentas();
 		
 		Ventas venta = new Ventas();
-		venta.setIdProd(12);
 		venta.setTotalVenta(124);
 		venta.setFechaVenta(new Date());
 		venta.setEmpleado(listaEmpleados.get(0));
+		venta.setProducto(listaProductos.get(0));
 		
 		persistV.save(venta);
 		
