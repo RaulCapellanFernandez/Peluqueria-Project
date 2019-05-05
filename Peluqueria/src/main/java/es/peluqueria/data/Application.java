@@ -6,6 +6,7 @@ import java.util.List;
 import es.peluqueria.entidades.*;
 import es.peluqueria.persistence.PersistAlmacen;
 import es.peluqueria.persistence.PersistEmpleados;
+import es.peluqueria.persistence.PersistVentas;
 
 public class Application {
 
@@ -19,11 +20,11 @@ public class Application {
 		almacen.setCantidad(3);
 		*/
 		
-		/*
+		
 		PersistEmpleados persistE = new PersistEmpleados();
 	
 		Empleados empleado = new Empleados();
-		empleado.setDni("123156381");
+		empleado.setDni("124156321");
 		empleado.setNombre("Raul");
 		empleado.setApellidos("Capellan");
 		empleado.setFechaContra(new Date());
@@ -33,7 +34,20 @@ public class Application {
 		empleado.setCiudad("Leon");
 		empleado.setProvincia("Leon");
 		empleado.setCodPostal("24009");
-		*/
+		
+		
+		//persistE.save(empleado);
+		List<Empleados>listaEmpleados = persistE.recuperar();
+		
+		PersistVentas persistV  = new PersistVentas();
+		
+		Ventas venta = new Ventas();
+		venta.setIdProd(12);
+		venta.setTotalVenta(124);
+		venta.setFechaVenta(new Date());
+		venta.setEmpleado(listaEmpleados.get(0));
+		
+		persistV.save(venta);
 		
 	}
 }

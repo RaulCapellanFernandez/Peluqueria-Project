@@ -1,10 +1,15 @@
 package es.peluqueria.entidades;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -42,6 +47,9 @@ public class Empleados {
 	
 	@Column(name = "CODIGO_POSTAL")
 	private String codPostal;
+	
+	
+	
 	
 	
 	public String getCiudad() {

@@ -7,6 +7,7 @@
 		
 		<class>es.peluqueria.entidades.Empleados</class>
 		<class>es.peluqueria.entidades.Almacen</class>
+		<class>es.peluqueria.entidades.Ventas</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.user" value="root"/>
