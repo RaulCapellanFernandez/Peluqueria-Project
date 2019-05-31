@@ -20,6 +20,7 @@ public class Application {
 		//Guardar cada clase
 		Empleados empleado = new Empleados();
 		empleado.setDni("71471266P");
+		empleado.setContrasenia("hola");
 		empleado.setNombre("Maria");
 		empleado.setApellidos("Hernandez");
 		empleado.setFechaContra(new Date());

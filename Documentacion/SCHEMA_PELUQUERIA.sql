@@ -17,6 +17,7 @@ DROP TABLE IF EXISTS `empleados`;
 
 CREATE TABLE `empleados` (
   `DNI` VARCHAR(9) NOT NULL ,
+  `CONTRASENIA` varchar(45) NOT NULL,
   `NOMBRE` varchar(45) NOT NULL,
   `APELLIDOS` varchar(45) NOT NULL,
   `FECHA_CONTRATACION` date NOT NULL,

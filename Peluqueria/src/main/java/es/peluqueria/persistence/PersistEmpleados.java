@@ -62,6 +62,7 @@ public class PersistEmpleados {
 			Empleados actualizar = em.find(Empleados.class, empleado.getDni());
 			
 			actualizar.setNombre(empleado.getNombre());
+			actualizar.setContrasenia(empleado.getContrasenia());
 			actualizar.setApellidos(empleado.getApellidos());
 			actualizar.setFechaContra(empleado.getFechaContra());
 			actualizar.setEmail(empleado.getEmail());

@@ -21,6 +21,9 @@ public class Empleados {
 	@Column(name = "DNI")
 	private String dni;
 	
+	@Column(name = "CONTRASENIA")
+	private String contrasenia;
+	
 	@Column(name = "NOMBRE")
 	private String nombre;
 	
@@ -50,7 +53,12 @@ public class Empleados {
 	
 	
 	
-	
+	public String getContrasenia() {
+		return contrasenia;
+	}
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
 	
 	public String getCiudad() {
 		return ciudad;
