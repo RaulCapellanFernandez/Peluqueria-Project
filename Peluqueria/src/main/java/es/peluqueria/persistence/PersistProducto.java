@@ -62,7 +62,6 @@ public class PersistProducto {
 			
 			actualizar.setNombre(producto.getNombre());
 			actualizar.setPrecio(producto.getPrecio());
-			actualizar.setAlmacen(producto.getAlmacen());
 			
 			tx.commit();		
 		}catch(Exception e){

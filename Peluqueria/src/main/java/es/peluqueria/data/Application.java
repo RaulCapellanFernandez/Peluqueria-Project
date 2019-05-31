@@ -44,7 +44,7 @@ public class Application {
 		producto.setPrecio(24);
 		
 		List<Almacen>listaAlmacen = persistA.recuperar();
-		producto.setAlmacen(listaAlmacen.get(0));
+	//	producto.setAlmacen(listaAlmacen.get(0));
 		
 		persistP.save(producto);
 		

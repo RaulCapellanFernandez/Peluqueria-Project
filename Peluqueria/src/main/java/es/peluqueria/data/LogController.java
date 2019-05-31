@@ -40,7 +40,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class LogController {
-
+	public static String nombre;
     @FXML
     private JFXTextField idTextField;
 
@@ -55,31 +55,30 @@ public class LogController {
     	String usuario = idTextField.getText();
     	String password = passTextField.getText();
     	
-    	List<Empleados>listaEmpleado  = new ArrayList<Empleados>();
+    	List<Empleados>listaEmpleado  = recuperaListaEmpleados();
     	if(compruebaEmpleado(listaEmpleado, usuario, password)) {
+    		logButton.setOnAction(scene->Platform.exit());
     		Parent root1 = FXMLLoader.load(getClass().getResource("/es/peluqueria/interfaces/venta.fxml"));
             Scene scene2 = new Scene(root1);
             Stage satage = new Stage();
             satage.setScene(scene2);
             satage.show();
-    		logButton.setOnAction(e->Platform.exit());
+    		
     	}else {
-    		Parent root1 = FXMLLoader.load(getClass().getResource("/es/peluqueria/interfaces/venta.fxml"));
-            Scene scene2 = new Scene(root1);
-            Stage satage = new Stage();
-            satage.setScene(scene2);
-            satage.show();
-    		logButton.setOnAction(e->Platform.exit());
-       		//String cadena = "Introduce un usuario o contraseña correctos";
-    		//JOptionPane.showMessageDialog(null, cadena,"No es correcto el usuario o la contraseña.", 0);
+       		String cadena = "Introduce un usuario o contraseña correctos";
+    		JOptionPane.showMessageDialog(null, cadena,"No es correcto el usuario o la contraseña.", 0);
     	}
     }
 
 	private boolean compruebaEmpleado(List<Empleados> listaEmpleados, String dni, String password) {
+		System.out.println(listaEmpleados.size());
 		for(int i = 0; i < listaEmpleados.size(); i++) {
+			System.out.println("DNI"+listaEmpleados.get(i).getDni());
 			if(listaEmpleados.get(i).getDni().equals(dni)) {
-				if(listaEmpleados.get(i).getContrasenia().contentEquals(password))
+				if(listaEmpleados.get(i).getContrasenia().contentEquals(password)) {
+					nombre = listaEmpleados.get(i).getNombre();
 					return true;
+				}
 			}
 		}
 		return false;
@@ -90,5 +89,8 @@ public class LogController {
 		List<Empleados>listaEmpleados = persistE.recuperar();
 		
 		return listaEmpleados;
+	}
+	public String recUsuario() {
+		return idTextField.getText();
 	}
 }

@@ -24,19 +24,10 @@ public class Productos {
 	@Column(name = "CANTIDAD")
 	private Integer precio;
 	
-	@ManyToOne
-	@JoinColumn(name = "ID_ALMACEN")
-	private Almacen almacen;
 
 	
 
-	public Almacen getAlmacen() {
-		return almacen;
-	}
-
-	public void setAlmacen(Almacen almacen) {
-		this.almacen = almacen;
-	}
+	
 
 	public Integer getIdProd() {
 		return idProd;

@@ -7,9 +7,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="600.0" prefHeight="691.0" prefWidth="804.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="600.0" prefHeight="691.0" prefWidth="804.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.peluqueria.data.VentaController">
    <children>
-      <JFXButton layoutX="516.0" layoutY="286.0" prefHeight="120.0" prefWidth="120.0" text="Depilación">
+      <JFXButton fx:id="depilacionButton" layoutX="516.0" layoutY="286.0" onAction="#eventDepilacion" prefHeight="120.0" prefWidth="120.0" text="Depilación">
          <styleClass>
             <String fx:value="product-button" />
             <String fx:value="letraBlanca" />
@@ -18,7 +18,7 @@
             <Font name="Calibri" size="19.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="350.0" layoutY="286.0" prefHeight="120.0" prefWidth="120.0" text="Lavado">
+      <JFXButton fx:id="lavadoButton" layoutX="350.0" layoutY="286.0" onAction="#eventLavado" prefHeight="120.0" prefWidth="120.0" text="Lavado">
          <styleClass>
             <String fx:value="product-button" />
             <String fx:value="letraBlanca" />
@@ -27,7 +27,7 @@
             <Font name="Calibri" size="26.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="197.0" layoutY="286.0" prefHeight="120.0" prefWidth="120.0" text="Barba">
+      <JFXButton fx:id="barbaButton" layoutX="197.0" layoutY="286.0" onAction="#eventBarba" prefHeight="120.0" prefWidth="120.0" text="Barba">
          <styleClass>
             <String fx:value="product-button" />
             <String fx:value="letraBlanca" />
@@ -36,7 +36,7 @@
             <Font size="26.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="197.0" layoutY="109.0" prefHeight="120.0" prefWidth="120.0" text="Corte">
+      <JFXButton fx:id="corteButton" layoutX="197.0" layoutY="109.0" onAction="#eventCorte" prefHeight="120.0" prefWidth="120.0" text="Corte">
          <styleClass>
             <String fx:value="product-button" />
             <String fx:value="letraBlanca" />
@@ -45,7 +45,7 @@
             <Font name="Calibri" size="26.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="350.0" layoutY="109.0" prefHeight="120.0" prefWidth="120.0" text="Tinte">
+      <JFXButton fx:id="tinteButton" layoutX="350.0" layoutY="109.0" onAction="#eventTinte" prefHeight="120.0" prefWidth="120.0" text="Tinte">
          <styleClass>
             <String fx:value="product-button" />
             <String fx:value="letraBlanca" />
@@ -54,7 +54,7 @@
             <Font size="26.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="516.0" layoutY="109.0" prefHeight="120.0" prefWidth="124.0" text="Peinado">
+      <JFXButton fx:id="peinadoButton" layoutX="516.0" layoutY="109.0" onAction="#eventPeinado" prefHeight="120.0" prefWidth="124.0" text="Peinado">
          <styleClass>
             <String fx:value="product-button" />
             <String fx:value="letraBlanca" />
@@ -63,12 +63,12 @@
             <Font name="Calibri" size="26.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="520.0" layoutY="466.0" prefHeight="40.0" prefWidth="120.0" styleClass="atras-button" text="Atras">
+      <JFXButton fx:id="atrasButton" layoutX="520.0" layoutY="466.0" prefHeight="40.0" prefWidth="120.0" styleClass="atras-button" text="Atras">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="520.0" layoutY="533.0" prefHeight="40.0" prefWidth="120.0" styleClass="siguiente-button" text="Pagar">
+      <JFXButton fx:id="pagarButton" layoutX="520.0" layoutY="533.0" prefHeight="40.0" prefWidth="120.0" styleClass="siguiente-button" text="Pagar">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -79,7 +79,7 @@
          </font>
       </Label>
       <Line endX="100.0" layoutX="359.0" layoutY="573.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
-      <Label layoutX="290.0" layoutY="523.0" prefHeight="41.0" prefWidth="151.0" text="100 €" textFill="WHITE">
+      <Label fx:id="totalLabel" layoutX="290.0" layoutY="523.0" prefHeight="41.0" prefWidth="151.0" text="0 €" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="36.0" />
          </font>
@@ -89,7 +89,7 @@
             <Font name="Calibri" size="35.0" />
          </font>
       </Label>
-      <Label layoutX="197.0" layoutY="40.0" prefHeight="41.0" prefWidth="203.0" text="Maria Jesus" textFill="WHITE">
+      <Label fx:id="empleadoLabel" layoutX="197.0" layoutY="40.0" prefHeight="41.0" prefWidth="203.0" textFill="WHITE">
          <font>
             <Font name="Calibri" size="29.0" />
          </font>
