@@ -2,6 +2,7 @@
     -fx-primary : #2A2E37;
     -fx-secondary : #FFFF8D;
     -fx-primarytext : #B2B2B2;
+    -fx-rojo : #9F1717;
 }
 
 .root{
@@ -29,8 +30,33 @@
 .login-button:pressed{
 	-fx-font-size: 13;
 }
+.product-button{
+	-fx-border-color : -fx-secondary;
+	-fx-border-radius: 100px;
+	-fx-background-radius: 100px;
+}
+.product-button:hover{
+	-fx-border-color: -fx-secondary;
+	-fx-background-color: -fx-secondary;
+	
+}
+.product-button:pressed{
+	-fx-font-size: 13;
+}
 .text-field{
-	-fx-text-fill: -fx-primarytext;
+	-fx-text-fill: white;
 	-fx-font-size : 13pt;
 	-jfx-focus-color: -fx-secondary;
+}
+.atras-button{
+	 -fx-background-color: -fx-rojo;
+}
+.atras-button:pressed{
+	-fx-font-size: 13;
+}
+.siguiente-button{
+	 -fx-background-color: #12728E;
+}
+.siguiente-button:pressed{
+	-fx-font-size: 13;
 }

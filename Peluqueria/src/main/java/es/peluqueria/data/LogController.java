@@ -64,8 +64,14 @@ public class LogController {
             satage.show();
     		logButton.setOnAction(e->Platform.exit());
     	}else {
-       		String cadena = "Introduce un usuario o contraseña correctos";
-    		JOptionPane.showMessageDialog(null, cadena,"No es correcto el usuario o la contraseña.", 0);
+    		Parent root1 = FXMLLoader.load(getClass().getResource("/es/peluqueria/interfaces/venta.fxml"));
+            Scene scene2 = new Scene(root1);
+            Stage satage = new Stage();
+            satage.setScene(scene2);
+            satage.show();
+    		logButton.setOnAction(e->Platform.exit());
+       		//String cadena = "Introduce un usuario o contraseña correctos";
+    		//JOptionPane.showMessageDialog(null, cadena,"No es correcto el usuario o la contraseña.", 0);
     	}
     }
 

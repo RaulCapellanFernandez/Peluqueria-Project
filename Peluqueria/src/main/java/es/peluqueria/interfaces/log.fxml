@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="300.0" prefWidth="350.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.peluqueria.data.LogController">
+<AnchorPane prefHeight="300.0" prefWidth="350.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.peluqueria.data.LogController">
    <children>
       <JFXTextField fx:id="idTextField" focusColor="#b5b5b5" layoutX="95.0" layoutY="95.0" prefHeight="25.0" prefWidth="217.0" promptText="Usuario" styleClass="letraBlanca" unFocusColor="WHITE">
          <font>
