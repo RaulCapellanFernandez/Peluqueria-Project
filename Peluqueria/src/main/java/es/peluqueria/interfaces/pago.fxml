@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXListView?>
+<?import java.lang.String?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.peluqueria.data.PagoController">
+   <children>
+      <JFXListView fx:id="listView" layoutX="26.0" layoutY="28.0" prefHeight="435.0" prefWidth="245.0" styleClass="root" />
+   </children>
+   <styleClass>
+      <String fx:value="root" />
+      <String fx:value="letraBlanca" />
+   </styleClass>
 </AnchorPane>
-

@@ -63,12 +63,7 @@
             <Font name="Calibri" size="26.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="atrasButton" layoutX="520.0" layoutY="466.0" prefHeight="40.0" prefWidth="120.0" styleClass="atras-button" text="Atras">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="pagarButton" layoutX="520.0" layoutY="533.0" prefHeight="40.0" prefWidth="120.0" styleClass="siguiente-button" text="Pagar">
+      <JFXButton fx:id="atrasButton" layoutX="520.0" layoutY="466.0" onAction="#eventAtras" prefHeight="40.0" prefWidth="120.0" styleClass="atras-button" text="Atras">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -94,5 +89,10 @@
             <Font name="Calibri" size="29.0" />
          </font>
       </Label>
+      <JFXButton fx:id="pagarButton" layoutX="520.0" layoutY="535.0" onAction="#eventPagar" prefHeight="40.0" prefWidth="120.0" styleClass="siguiente-button" text="Pagar">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

@@ -40,7 +40,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class LogController {
-	public static String nombre;
+	public static Empleados empleado;
     @FXML
     private JFXTextField idTextField;
 
@@ -57,7 +57,9 @@ public class LogController {
     	
     	List<Empleados>listaEmpleado  = recuperaListaEmpleados();
     	if(compruebaEmpleado(listaEmpleado, usuario, password)) {
-    		logButton.setOnAction(scene->Platform.exit());
+    		Stage stage = (Stage) logButton.getScene().getWindow();
+            // do what you have to do
+            stage.close();
     		Parent root1 = FXMLLoader.load(getClass().getResource("/es/peluqueria/interfaces/venta.fxml"));
             Scene scene2 = new Scene(root1);
             Stage satage = new Stage();
@@ -76,7 +78,7 @@ public class LogController {
 			System.out.println("DNI"+listaEmpleados.get(i).getDni());
 			if(listaEmpleados.get(i).getDni().equals(dni)) {
 				if(listaEmpleados.get(i).getContrasenia().contentEquals(password)) {
-					nombre = listaEmpleados.get(i).getNombre();
+					empleado = listaEmpleados.get(i);
 					return true;
 				}
 			}
